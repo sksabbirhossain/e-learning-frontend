@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <Navbar expand="lg" className="main-header">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar>
           <div className=" logo-area">
             <div className="pe-2 logo">
               <img src={logo} alt="" />
@@ -26,7 +26,7 @@ const Header = () => {
               <small>for build your knowlage</small>
             </div>
           </div>
-        </Navbar.Brand>
+        </Navbar>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -36,6 +36,11 @@ const Header = () => {
           >
             <Nav.Link>
               <NavLink to="/" end>
+                Home
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/courses" end>
                 Courses
               </NavLink>
             </Nav.Link>

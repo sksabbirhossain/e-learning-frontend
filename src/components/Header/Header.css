@@ -6,6 +6,7 @@
     display: flex;
     height: auto;
     align-items: center;
+    cursor: pointer;
 }
 .logo-text p{
     line-height: 15px;
@@ -25,8 +26,8 @@
     height: auto;
     box-shadow: 0px 0px 5px green;
 }
-.main-header a{
-    color: black;
+.main-header a,a:hover{
+    color: #07ad68;
     font-size: 16px;
     font-weight: 600;
     transition: all .4s;
