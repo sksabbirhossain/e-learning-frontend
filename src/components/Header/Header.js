@@ -7,15 +7,26 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "tippy.js/dist/tippy.css";
 import "./Header.css";
+import logo from  "../../logo.png"
 
 const Header = () => {
   const [theme, setTheme] = useState(false);
   const currentUser = true;
   const userName = "sk sabbir hossain"
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" className="main-header">
       <Container>
-        <Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <div className=" logo-area">
+            <div className="pe-2 logo">
+              <img src={logo} alt="" />
+            </div>
+            <div className="logo-text d-flex flex-column  justify-content-start">
+              <p>E-Learning</p>
+              <small>for build your knowlage</small>
+            </div>
+          </div>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
