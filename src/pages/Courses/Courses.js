@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Courses.css";
@@ -28,7 +29,7 @@ const Courses = () => {
                   <div className="card-body">
                     <p className="card-title">{items.title}</p>
                     <Link to={`/category/${items._id}`} className="btn btn-success w-100">
-                      Learn more
+                      Learn more <FaArrowRight/>
                     </Link>
                   </div>
                 </div>

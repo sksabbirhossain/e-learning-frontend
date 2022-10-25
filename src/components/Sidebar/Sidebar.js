@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Sidebar.css"
+import { NavLink } from "react-router-dom";
+import styles from "./Sidebar.module.css";
 
 const Sidebar = () => {
   const [courses, setCourses] = useState([]);
@@ -10,10 +10,10 @@ const Sidebar = () => {
       .then((data) => setCourses(data));
   }, []);
   return (
-    <div className="sidebar">
+    <div className={styles.sidebar}>
       {courses.map((items) => (
         <p key={items.id}>
-          <Link to={`/courses/${items.id}`}>{items.name}</Link>
+          <NavLink to={`/courses/${items.id}`}>{items.name}</NavLink>
         </p>
       ))}
     </div>

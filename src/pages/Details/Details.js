@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Details = () => {
   const [details, setDetails] = useState([]);
@@ -15,12 +15,11 @@ const Details = () => {
         <img src={details.img} className="card-img-top" alt="card_image" />
         <div className="card-body">
           <h1 className="card-title">{details.title} </h1>
-          <p className="card-text">
-            {details.details}
-          </p>
-          <a href="/" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <h5 className="fw-bold">description:</h5>
+          <p className="card-text">{details.details}</p>
+          <Link to={`/checkout/${details._id}`} className="btn btn-success">
+            Get premium access
+          </Link>
         </div>
       </div>
     </div>
