@@ -7,6 +7,7 @@ import "./Courses.css";
 const Courses = () => {
   const [courseCategory, setCourseCategory] = useState([]);
   const { id } = useParams();
+  // fetch data
   useEffect(() => {
     fetch(`https://e-learning-backend.vercel.app/api/courses/${id}`)
       .then((res) => res.json())

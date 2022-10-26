@@ -74,7 +74,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="mx-auto mt-2 mb-3 w-25 border p-3 pb-1 rounded">
+    <div className="mx-auto mt-2 mb-3 w-25 border p-3 pb-1 rounded signin-page">
       <div className="mb-3">
         <h3>Create Account</h3>
       </div>

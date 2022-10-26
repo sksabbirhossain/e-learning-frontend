@@ -28,7 +28,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="mx-auto mt-5 w-25 border p-3 pb-5 rounded">
+    <div className="mx-auto mt-5 w-25 border p-3 pb-5 rounded login-page">
       <div className="mb-3">
         <h3>Login</h3>
       </div>

@@ -4,6 +4,7 @@ import styles from "./Sidebar.module.css";
 
 const Sidebar = () => {
   const [courses, setCourses] = useState([]);
+  // fetch data
   useEffect(() => {
     fetch("https://e-learning-backend.vercel.app/api/courses")
       .then((res) => res.json())
