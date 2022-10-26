@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
   });
 
   // create a user
-  const userSignup = (email, password) => {
+  const userSignup = (email, password, username, photourl) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -45,7 +45,6 @@ export function AuthProvider({ children }) {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        console.log("logout");
         toast.success("LogOut successful");
       })
       .catch((error) => {

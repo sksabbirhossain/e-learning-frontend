@@ -6,13 +6,14 @@ import Navbar from "react-bootstrap/Navbar";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "tippy.js/dist/tippy.css";
+import { useAuth } from "../../contexts/AuthContext";
+import logo from "../../logo.png";
 import "./Header.css";
-import logo from  "../../logo.png"
 
 const Header = () => {
   const [theme, setTheme] = useState(false);
-  const currentUser = true;
-  const userName = "sk sabbir hossain"
+  const { currentUser, logOut } = useAuth();
+
   return (
     <Navbar expand="lg" className="main-header">
       <Container>
@@ -53,9 +54,16 @@ const Header = () => {
             <Nav.Link>
               {currentUser ? (
                 <>
-                  <Tippy content={userName}>
+                  <span className="me-2" onClick={logOut}>
+                    LogOut
+                  </span>
+                  <Tippy content={currentUser && currentUser.displayName}>
                     <img
-                      src="https://freesvg.org/img/abstract-user-flat-4.png"
+                      src={
+                        currentUser.photoURL === null
+                          ? "https://freesvg.org/img/abstract-user-flat-4.png"
+                          : currentUser.photoURL
+                      }
                       alt=""
                       className="user-logo"
                     />
