@@ -1,8 +1,11 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GithubAuthProvider,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 
@@ -21,6 +24,8 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+  const gitProvider = new GithubAuthProvider();
 
   useEffect(() => {
     const unsubcrive = onAuthStateChanged(auth, (user) => {
@@ -33,6 +38,16 @@ export function AuthProvider({ children }) {
   // create a user
   const userSignup = (email, password, username, photourl) => {
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // create a user by google
+  const googleSignin = () => {
+    return signInWithPopup(auth, provider);
+  };
+
+  // create a user by github
+  const githubSignIn = () => {
+    return signInWithPopup(auth, gitProvider);
   };
 
   // login user
@@ -57,6 +72,8 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
     userSignup,
+    googleSignin,
+    githubSignIn,
     userLogin,
     logOut,
   };

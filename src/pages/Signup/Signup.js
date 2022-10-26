@@ -1,7 +1,8 @@
 import { updateProfile } from "firebase/auth";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Link,  useNavigate } from "react-router-dom";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import FormInput from "../../components/FormInput/FormInput";
 import { useAuth } from "../../contexts/AuthContext";
@@ -12,8 +13,10 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { userSignup } = useAuth();
+  const { userSignup, googleSignin, githubSignIn } = useAuth();
   const navigate = useNavigate();
+
+  // form handle and signup function
   const handleSignup = (e) => {
     e.preventDefault();
     //   validation
@@ -28,8 +31,8 @@ const Signup = () => {
 
         // update profile
         updateProfile(user, {
-            displayName: username,
-            photoURL: photourl
+          displayName: username,
+          photoURL: photourl,
         });
         navigate("/");
       })
@@ -39,8 +42,39 @@ const Signup = () => {
       });
   };
 
+  // google signup function
+  const handleGoogleSignIn = () => {
+    googleSignin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Google SignUp successful");
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
+  // github signup function
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user);
+        toast.success("Github SignUp successful");
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
   return (
-    <div className="mx-auto mt-2 w-25 border p-3 pb-1 rounded">
+    <div className="mx-auto mt-2 mb-3 w-25 border p-3 pb-1 rounded">
       <div className="mb-3">
         <h3>Create Account</h3>
       </div>
@@ -99,6 +133,14 @@ const Signup = () => {
           </Link>
         </small>
       </p>
+      <div className="d-flex justify-content-center gap-3">
+        <p onClick={handleGoogleSignIn} className=" h1">
+          <FaGoogle />
+        </p>
+        <p onClick={handleGithubSignIn} className=" h1">
+          <FaGithub />
+        </p>
+      </div>
     </div>
   );
 };
