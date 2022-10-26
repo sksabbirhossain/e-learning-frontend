@@ -5,6 +5,7 @@ import Blogs from "./pages/Blogs/Blogs";
 import Checkout from "./pages/Ckeckout/Checkout";
 import Courses from "./pages/Courses/Courses";
 import Details from "./pages/Details/Details";
+import Error from "./pages/Error/Error";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
@@ -30,6 +31,7 @@ function App() {
               </PrivateRoute>
             }
           />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </>
