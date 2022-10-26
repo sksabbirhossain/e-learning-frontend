@@ -49,7 +49,7 @@ const Header = () => {
               <NavLink to="/faq">FAQ</NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink to="/blog">Blog</NavLink>
+              <NavLink to="/blogs">Blog</NavLink>
             </Nav.Link>
             <Nav.Link>
               {currentUser ? (
