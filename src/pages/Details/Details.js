@@ -18,7 +18,7 @@ const Details = () => {
           <h5 className="fw-bold">description:</h5>
           <p className="card-text">{details.details}</p>
           <Link to={`/checkout/${details._id}`} className="btn btn-success">
-            Get premium access
+          Purchase course
           </Link>
         </div>
       </div>
