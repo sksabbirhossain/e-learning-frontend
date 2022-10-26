@@ -8,7 +8,7 @@ const Courses = () => {
   const [courseCategory, setCourseCategory] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`/api/courses/${id}`)
+    fetch(`https://e-learning-backend.vercel.app/api/courses/${id}`)
       .then((res) => res.json())
       .then((data) => setCourseCategory(data));
   }, [id]);

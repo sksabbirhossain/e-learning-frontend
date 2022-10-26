@@ -5,7 +5,7 @@ const Details = () => {
   const [details, setDetails] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`/api/category/${id}`)
+    fetch(`https://e-learning-backend.vercel.app/api/category/${id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, [id]);
@@ -18,7 +18,7 @@ const Details = () => {
           <h5 className="fw-bold">description:</h5>
           <p className="card-text">{details.details}</p>
           <Link to={`/checkout/${details._id}`} className="btn btn-success">
-          Purchase course
+            Purchase course
           </Link>
         </div>
       </div>

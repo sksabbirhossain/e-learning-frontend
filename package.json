@@ -1,5 +1,4 @@
 {
-  "proxy": "https://e-learning-backend.vercel.app",
   "name": "e-learning-frontend",
   "version": "0.1.0",
   "private": true,

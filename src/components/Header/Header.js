@@ -17,17 +17,17 @@ const Header = () => {
   return (
     <Navbar expand="lg" className="main-header">
       <Container>
-        <Navbar>
+        <Navbar.Brand>
           <div className=" logo-area">
             <div className="pe-2 logo">
-              <img src={logo} alt="" />
+              <img src={logo} alt="logo" />
             </div>
             <div className="logo-text d-flex flex-column  justify-content-start">
               <p>E-Learning</p>
               <small>for build your knowlage</small>
             </div>
           </div>
-        </Navbar>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -41,9 +41,7 @@ const Header = () => {
               </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink to="/courses" end>
-                Courses
-              </NavLink>
+              <NavLink to="/courses">Courses</NavLink>
             </Nav.Link>
             <Nav.Link>
               <NavLink to="/faq">FAQ</NavLink>
