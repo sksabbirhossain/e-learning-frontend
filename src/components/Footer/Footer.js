@@ -13,10 +13,10 @@ const Footer = () => {
               <div className="footerContent py-3 d-flex flex-column justify-content-center align-items-center">
                 <img src={logo} className="img-fluid" alt="" />
                 <p className="text-center">
-                  I am Sabbir. I am providing food dalivery services. <br /> I
-                  cook all my food at my home. I try to keep my diet very good .{" "}
-                  <br /> i also deliver the ordered food the order's home. and i
-                  didn't charge extra for that.
+                  This is a react Learning Application. Here you will find many
+                  Courses. <br /> and if you click on a Course, you can see manny
+                  course categories. <br /> if you click any category then you can see
+                  this category details. and you can this.
                 </p>
                 <SocialIcons />
               </div>
