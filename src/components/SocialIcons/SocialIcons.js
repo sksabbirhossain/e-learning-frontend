@@ -1,6 +1,7 @@
 import React from "react";
 import {
   FaFacebookF,
+  FaGithub,
   FaInstagram,
   FaLinkedinIn,
   FaTwitter,
@@ -11,18 +12,18 @@ import styles from "./SocialIcons.module.css";
 const SocialIcons = () => {
   return (
     <div className="d-flex mb-4 mb-sm-0">
-      <Link to="/" className={styles.socialIcon}>
+      <a href="https://www.facebook.com/sksabbirhossain4/" className={styles.socialIcon}>
         <FaFacebookF />
-      </Link>
-      <Link to="/" className={styles.socialIcon}>
-        <FaInstagram />
-      </Link>
-      <Link to="/" className={styles.socialIcon}>
+      </a>
+      <a href="https://github.com/sksabbirhossain" className={styles.socialIcon}>
+        <FaGithub />
+      </a>
+      <a href="https://www.linkedin.com/in/sk-sabbir-hossain/" className={styles.socialIcon}>
         <FaLinkedinIn />
-      </Link>
-      <Link to="/" className={styles.socialIcon}>
+      </a>
+      <a href="https://twitter.com/sksabbir393" className={styles.socialIcon}>
         <FaTwitter />
-      </Link>
+      </a>
     </div>
   );
 };

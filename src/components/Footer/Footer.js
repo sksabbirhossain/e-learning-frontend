@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
       </section>
       <footer className={styles.footer}>
-        <span>Copyright © 2022 Daily Food. All rights reserved.</span>
+        <span>Copyright © 2022 E-Learning. All rights reserved.</span>
       </footer>
     </>
   );
